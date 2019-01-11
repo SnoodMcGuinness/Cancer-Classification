@@ -2,7 +2,6 @@
 #training and testing sets
 
 import pandas as pd
-from keras.utils import normalize
 
 def import_data(filename):
     #Generate column headers
@@ -22,6 +21,6 @@ def import_data(filename):
     labels=labels.values
     
     #normalise training data
-    features=normalize(dataset.drop('Classification',axis=1).values, axis=0, order=2)
+    features=dataset.drop('Classification',axis=1).values
     return [dataset, labels, features]
     
